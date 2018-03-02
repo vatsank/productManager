@@ -32,4 +32,13 @@ export class ProductService {
 
 
   }
+
+  updateProduct(product: Product):Observable<number> {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+          const options = new RequestOptions({ headers: headers });
+          console.log('product in update'+product);
+          return this.service.put(this.baseUrl + '/3', product, options)
+                 .map(success => success.status);
+      }
+
 }
