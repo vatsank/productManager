@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ProductFilterPipe implements PipeTransform {
 
+
   transform(items: any, field: any , value: any): any {
 
     if (!items) {
@@ -19,4 +20,4 @@ if (!field || !value) {
 
   }
 
-}
+
