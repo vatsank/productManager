@@ -31,7 +31,7 @@ orderByComparator(a: any, b: any): number {
    if (a.toLowerCase() > b.toLowerCase()) { return 1 ; }
 
   } else{
-    if (parseFloat(a) < parseFloat(b)) {return 1;}
+       if (parseFloat(a) < parseFloat(b)) {return 1;}
       if (parseFloat(a) > parseFloat(b)) { return -1;}
 
     }

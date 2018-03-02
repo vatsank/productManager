@@ -1,3 +1,17 @@
+# Instructions
+
+create a new Angular Project with ng new productManager --routing
+
+Create Three Compoents  ng g components compName (addProduct,login,register,showProduct)
+
+Create a Service ng g service authenticate
+
+create another service ng g AuthGuardService
+
+Open the app-routing Module and update it
+
+Start the Server and view the application   ng serve -o 
+
 # ProductPromotion
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
