@@ -1,24 +1,25 @@
+<h1 appInsert addText="<h2>Using Forms</h2>"></h1>
 <div>
 
     <form #frm="ngForm" (ngSubmit)='submit(frm.value)'>
 
         <div class="form-group">
             <label for="">Name</label>
-            <input type="text" name="name" class="form-control" ngModel>
+            <input type="text" name="name" class="form-control" [(ngModel)]='freshClient.name'>
         </div>
 
         <div class="form-group">
             <label for="">Category</label>
-            <input type="text" name="category" class="form-control" ngModel>
+            <input type="text" name="category" class="form-control" [(ngModel)]='freshClient.category'>
         </div>
 
         <div class="form-group">
             <label for="">Price</label>
-            <input type="text" name="price" class="form-control" ngModel></div>
+            <input type="text" name="price" class="form-control" [(ngModel)]='freshClient.price'></div>
 
         <div class="form-group">
             <label for="">Details</label>
-            <input type="text" name="details" class="form-control" ngModel>
+            <input type="text" name="details" class="form-control" [(ngModel)]='freshClient.details'>
         </div>
 
         <div class="form-group">
@@ -29,6 +30,10 @@
 </div>
 
 <div>
+    <label>Search</label> <input [(ngModel)]="srchCriteria" type="search" placeholder="Enter productName">
+
+</div>
+<div>
     <table class="table table-bordered table-striped">
         <tr>
             <th>Product Name</th>
@@ -36,13 +41,13 @@
             <th>Price</th>
             <th>Details</th>
         </tr>
-        <tr *ngFor="let eachProduct of productList">
+        <tr *ngFor="let eachProduct of productList |orderBy:'price': true |productFilter: 'name':srchCriteria">
             <td>{{eachProduct.name | uppercase}}</td>
             <td>{{eachProduct.category}}</td>
             <td>{{eachProduct.price | currency:'INR'}}</td>
             <td>{{eachProduct.details}}</td>
             <td><input class="btn btn-danger" type="button" value="Delete" (click)="remove(eachProduct)"></td>
-            <td><input class="btn btn-info" type="button" value="Edit" (cick)="edit(eachProduct)"> </td>
+            <td><input class="btn btn-primary" type="button" value="Edit" (click)="edit(eachProduct)"> </td>
 
         </tr>
     </table>

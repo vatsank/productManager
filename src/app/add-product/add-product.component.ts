@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
+import { Form } from '@angular/forms';
 
 @Component({
   selector: 'app-add-product',
@@ -11,6 +12,14 @@ export class AddProductComponent implements OnInit {
   deleted: any = {};
   productToAdd: Product;
   productList: Product[];
+  freshClient:Product={
+    name:'',
+    category:'',
+    price:0,
+    details:''
+  }
+  srchCriteria ='';
+  @ViewChild('frm') form: any;
   constructor(private prodService: ProductService) { }
 
   ngOnInit() {
@@ -35,7 +44,14 @@ export class AddProductComponent implements OnInit {
      this.productToAdd = frmData;
      this.productList.push(this.productToAdd);
      console.log(this.productToAdd);
+      this.prodService.addProduct(frmData).subscribe(res => console.log(res));
+       this.form.reset();
+    }
 
-  }
+    edit(obj)  {
+      console.log('edit'+obj);
+    this.freshClient = obj;
+
+    }
 }
 

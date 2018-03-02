@@ -13,6 +13,8 @@ import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { OrderByPipe } from './order-by.pipe';
 import { ProductService } from './product.service';
+import { ProductFilterPipe } from './product-filter.pipe';
+import { InsertDirective } from './insert.directive';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { ProductService } from './product.service';
     RegisterComponent,
     AddProductComponent,
     ShowProdctComponent,
-    OrderByPipe
+    OrderByPipe,
+    ProductFilterPipe,
+    InsertDirective
   ],
   imports: [
     BrowserModule,
