@@ -1,0 +1,21 @@
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Details</th>
+        </tr>
+        <tr *ngFor="let eachProduct of productList">
+            <td>{{eachProduct.name | uppercase}}</td>
+            <td>{{eachProduct.category}}</td>
+            <td>{{eachProduct.price | currency:'INR'}}</td>
+            <td>{{eachProduct.details}}</td>
+            <td><input class="btn btn-danger" type="button" value="Delete" (click)="remove(eachProduct)"></td>
+            <td><input class="btn btn-info" type="button" value="Edit" (cick)="edit(eachProduct)"> </td>
+
+        </tr>
+    </table>
+</div>
+
+{{deleted.name}}<span>Deleted</span>

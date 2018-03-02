@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule , ReactiveFormsModule} from '@angular/forms';
-
+import {HttpModule} from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { ShowProdctComponent } from './show-prodct/show-prodct.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { OrderByPipe } from './order-by.pipe';
+import { ProductService } from './product.service';
 
 
 @NgModule({
@@ -27,9 +28,10 @@ import { OrderByPipe } from './order-by.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule ,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule,
   ],
-  providers: [AuthenticationService, AuthGuardService],
+  providers: [AuthenticationService, AuthGuardService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

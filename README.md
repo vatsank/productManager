@@ -12,6 +12,26 @@ Open the app-routing Module and update it
 
 Start the Server and view the application   ng serve -o 
 
+Copy the Product.json to an exernal folder and use json-server --watch product.json
+
+ Create a interface ng g interface Product
+
+ Create a service ng g service product
+
+ Update the Provider in the app-module.ts
+
+Update product Service Constructor DI - Http;
+
+ Implete getAllProduct() returning a Observable of Product Array Using get-REST Method
+
+ Update the AddProduct Component DI-Product Service
+
+ In the ngInit() Invoke the service and Subscribe.
+
+ Store the response in a Product Array.
+
+ Render in the template Using  table structure.
+
 # ProductPromotion
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
