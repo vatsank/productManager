@@ -1,0 +1,32 @@
+{
+    "products": [{
+            "id": 1,
+            "name": "Samsung",
+            "category": "mobile",
+            "price": 15200,
+            "details": "Smart Phone with Wifi, Back Camera"
+        },
+        {
+            "id": 2,
+            "name": "Oppo",
+            "category": "mobile",
+            "price": 16500,
+            "details": "Smart Phone with Wifi,Front and Back Camera"
+        },
+        {
+            "id": 3,
+            "name": "Lenova",
+            "category": "laptop",
+            "price": 36500,
+            "details": "With 8GB RAM 500 MB HDD"
+        },
+        {
+            "id": 4,
+            "name": "Dell",
+            "category": "laptop",
+            "price": 26500,
+            "details": "With 8GB Ram 1TB HDD"
+        }
+
+    ]
+}

@@ -5,12 +5,12 @@ import { Observable } from 'rxjs/Observable';
 export class AuthenticationService {
  result: Observable<boolean> ;
   constructor() { }
-  isValidUser:boolean;
+  isValidUser: boolean;
 
   getIsValidUser(){
     return this.isValidUser;
   }
-  authenticate(userName: string , passWord: string):Observable<boolean>
+  authenticate(userName: string , passWord: string): Observable<boolean>
   {
       this.result =  new Observable<false>();
       this.isValidUser = false;
