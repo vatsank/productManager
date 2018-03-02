@@ -11,6 +11,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ShowProdctComponent } from './show-prodct/show-prodct.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
+import { OrderByPipe } from './order-by.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AuthGuardService } from './auth-guard.service';
     LoginComponent,
     RegisterComponent,
     AddProductComponent,
-    ShowProdctComponent
+    ShowProdctComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
