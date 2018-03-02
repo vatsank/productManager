@@ -9,6 +9,7 @@ import { Product } from '../product';
 })
 export class AddProductComponent implements OnInit {
   deleted: any = {};
+  productToAdd: Product;
   productList: Product[];
   constructor(private prodService: ProductService) { }
 
@@ -20,7 +21,20 @@ export class AddProductComponent implements OnInit {
 
   remove(data) {
 
+   
     this.prodService.removeProduct(data.id).subscribe(res => console.log(res));
+
+    let idxPos = data.id;
+    this.productList.splice(--idxPos, 1);
+  
+  
+  }
+
+  submit(frmData){
+
+     this.productToAdd = frmData;
+     this.productList.push(this.productToAdd);
+     console.log(this.productToAdd);
 
   }
 }
